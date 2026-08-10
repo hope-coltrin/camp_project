@@ -1,4 +1,4 @@
-from camp_project.markov import simulate
+from camp_project.markov import simulate, empirical_frequency
 
 
 def test_simulate_degenerate():
@@ -7,3 +7,10 @@ def test_simulate_degenerate():
     path = simulate(P, 5)
 
     assert path == [0, 0, 0, 0, 0]
+
+def test_empirical_frequency():
+    path = [0, 0, 0, 1]
+
+    frequencies = empirical_frequency(path)
+
+    assert frequencies == {0: 0.75, 1: 0.25}
