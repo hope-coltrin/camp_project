@@ -1,3 +1,4 @@
+import pytest
 from camp_project.markov import empirical_frequency, simulate, stationary_distribution
 
 
@@ -21,3 +22,9 @@ def test_stationary_distribution_symmetric():
     distribution = stationary_distribution(P)
 
     assert distribution == {0: 0.5, 1: 0.5}
+
+def test_simulate_checks_rows():
+    P = [[0.8, 0.3], [0.3, 0.7]]
+
+    with pytest.raises(ValueError):
+        simulate(P, 5)

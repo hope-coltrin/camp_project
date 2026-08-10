@@ -15,6 +15,10 @@ def simulate(P: list[list[float]], T: int, seed: int = 0) -> list[int]:
     Outputs:
         A list showing the states visited during the simulation.
     """
+    for row in P:
+        if abs(sum(row) - 1.0) > 1e-9:
+            raise ValueError("Each row of P must add to 1.")
+
     rand = random.Random(seed)
     state = 0
     out = [state]
