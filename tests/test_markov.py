@@ -1,4 +1,4 @@
-from camp_project.markov import simulate, empirical_frequency, stationary_distribution
+from camp_project.markov import empirical_frequency, simulate, stationary_distribution
 
 
 def test_simulate_degenerate():
