@@ -28,3 +28,10 @@ def test_simulate_checks_rows():
 
     with pytest.raises(ValueError):
         simulate(P, 5)
+
+def test_simulate_length():
+    P = [[0.8, 0.2], [0.3, 0.7]]
+
+    path = simulate(P, 50)
+
+    assert len(path) == 50
