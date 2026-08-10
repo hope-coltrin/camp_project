@@ -35,3 +35,10 @@ def test_simulate_length():
     path = simulate(P, 50)
 
     assert len(path) == 50
+
+def test_empirical_frequency_sums_to_one():
+    path = [0, 3, 2, 1, 1]
+
+    frequencies = empirical_frequency(path)
+
+    assert sum(frequencies.values()) == 1.0
