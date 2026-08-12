@@ -3,9 +3,7 @@
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
-\usepackage{biblatex}
-
-\addbibresource{refs.bib}
+\usepackage{natbib}
 
 \title{Camp Project Markov Chain}
 \author{Hope Coltrin}
@@ -19,13 +17,12 @@
 This project uses a Markov chain to simulate a sequence of
 states, and I compare the empirical frequency of each state I found with its
 stationary distribution.
-
 \end{abstract}
 
 \section{Introduction}
 
 A Markov chain is a process where the next state depends on the current
-state through probabilities of each transition. These models can be used throughout economics. Athreya and Majumdar (2003) study estimation of the stationary distribution of a Markov chain \parencite{athreya2003markovchain}.
+state through probabilities of each transition. These models can be used throughout economics. Athreya and Majumdar (2003) study estimation of the stationary distribution of a Markov chain \citep{athreya2003markovchain}.
 
 In this project, I simulate a two-state Markov chain to check if the empirical frequency approaches the stationary distribution in the long run.
 
@@ -74,6 +71,7 @@ shows the results.
 
 The running frequency moves toward the stationary probability as the number of rounds, showing convergence to the stationary distribution.
 
-\printbibliography
+\bibliographystyle{plainnat}
+\bibliography{refs}
 
 \end{document}
